@@ -47,7 +47,7 @@ RSpec.describe 'Task', type: :system do
   describe 'Task詳細' do
     context '正常系' do
       let(:project) { create(:project) }
-      let(:task) { create(:task, project_id: project.id) }
+      let(:task) { create(:task) }
       it 'Taskが表示されること' do
         # TODO: ローカル変数ではなく let を使用してください
         visit project_task_path(project, task)
@@ -62,7 +62,7 @@ RSpec.describe 'Task', type: :system do
   describe 'Task編集' do
     context '正常系' do
       let(:project) { create(:project) }
-      let(:task) { create(:task, project_id: project.id) }
+      let(:task) { create(:task) }
       it 'Taskを編集した場合、一覧画面で編集後の内容が表示されること' do
         # FIXME: テストが失敗するので修正してください
 
